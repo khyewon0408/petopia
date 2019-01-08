@@ -7,14 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class CommonController {
-	@RequestMapping(value="/index1.pet", method= {RequestMethod.GET})
-	public void index1(HttpServletRequest req) {
-		System.out.println("확인");
-	}
 	
 	@RequestMapping(value="/index.pet", method= {RequestMethod.GET})
 	public String index(HttpServletRequest req) {
-		System.out.println("확인");
+		
 		return "main/index.tiles2";
 	}
 }
