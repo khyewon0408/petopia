@@ -17,22 +17,22 @@ import org.springframework.stereotype.Component;
 // import com.final2.petopia.common.MyUtil;
 import com.final2.petopia.model.MemberVO;
 
-//===== #52. °øÅë°ü½É»ç(Aspect)Å¬·¡½º; ·Î±×ÀÎ Ã¼Å© =====
+//===== #52. ê³µí†µê´€ì‹¬ì‚¬(Aspect)í´ë˜ìŠ¤; ë¡œê·¸ì¸ ì²´í¬ =====
 @Aspect
 @Component
 public class LoginCheck {
 
-//	#Æ÷ÀÎÆ®ÄÆ »ı¼ºÇÏ±â; execution(public(»ı·«°¡´É) *(¸®ÅÏÅ¸ÀÔ ¸ğµÎ) com.spring..(com.spring´ÙÀ½ ÆĞÅ°Áö À¯¹« »ó°ü¾øÀ½)*Controller(controller°´Ã¼).requireLogin_*(..)) 
+//	#í¬ì¸íŠ¸ì»· ìƒì„±í•˜ê¸°; execution(public(ìƒëµê°€ëŠ¥) *(ë¦¬í„´íƒ€ì… ëª¨ë‘) com.spring..(com.springë‹¤ìŒ íŒ¨í‚¤ì§€ ìœ ë¬´ ìƒê´€ì—†ìŒ)*Controller(controllerê°ì²´).requireLogin_*(..)) 
 	@Pointcut("execution(public * com.spring..*Controller.requireLogin_*(..))")
-	public void requireLogin() {}	// Æ÷ÀÎÆ®ÄÆÀÇ ½Äº°ÀÚ´Â ¸Ş¼Òµå¸íÀ¸·Î ÁöÁ¤
+	public void requireLogin() {}	// í¬ì¸íŠ¸ì»·ì˜ ì‹ë³„ìëŠ” ë©”ì†Œë“œëª…ìœ¼ë¡œ ì§€ì •
 	
-//	#Advice ¸¸µé±â(º¸Á¶¾÷¹«); BeforeAdvice ¼±¾ğ ¹× ½ÇÇà ³»¿ë ±¸ÇöÇÏ±â
+//	#Advice ë§Œë“¤ê¸°(ë³´ì¡°ì—…ë¬´); BeforeAdvice ì„ ì–¸ ë° ì‹¤í–‰ ë‚´ìš© êµ¬í˜„í•˜ê¸°
 	@Before("requireLogin()")
 	public void before(JoinPoint joinpoint) {
-//		>> Æ÷ÀÎÆ®ÄÆÇÑ ÁÖ¾÷¹«ÀÇ ¸Ş¼Òµå¸¦ JoinPoint °´Ã¼·Î °¡Á®¿È
+//		>> í¬ì¸íŠ¸ì»·í•œ ì£¼ì—…ë¬´ì˜ ë©”ì†Œë“œë¥¼ JoinPoint ê°ì²´ë¡œ ê°€ì ¸ì˜´
 		
-//		1) Controller¿¡¼­ ÆÄ¶ó¹ÌÅÍ·Î º¸³½ request°´Ã¼¸¦ ÅëÇÏ¿© session°´Ã¼¸¦ °¡Á®¿À±â
-		HttpServletRequest req = (HttpServletRequest)joinpoint.getArgs()[0]; // ÆÄ¶ó¹ÌÅÍ ¹è¿­ÀÇ Ã¹¹øÂ° ¹æ¹øÈ£ [0]
+//		1) Controllerì—ì„œ íŒŒë¼ë¯¸í„°ë¡œ ë³´ë‚¸ requestê°ì²´ë¥¼ í†µí•˜ì—¬ sessionê°ì²´ë¥¼ ê°€ì ¸ì˜¤ê¸°
+		HttpServletRequest req = (HttpServletRequest)joinpoint.getArgs()[0]; // íŒŒë¼ë¯¸í„° ë°°ì—´ì˜ ì²«ë²ˆì§¸ ë°©ë²ˆí˜¸ [0]
 		HttpServletResponse res = (HttpServletResponse)joinpoint.getArgs()[1];
 		HttpSession session = req.getSession();
 		MemberVO loginuser = (MemberVO)session.getAttribute("loginuser");
@@ -40,17 +40,17 @@ public class LoginCheck {
 		String loc = "";
 		if(loginuser==null) {
 			try {
-//			2) ·Î±×ÀÎ ÇÏÁö ¾ÊÀº °æ¿ì ·Î±×ÀÎ ÆäÀÌÁö·Î ÀÌµ¿
-				msg="·Î±×ÀÎ ÈÄ ÀÌ¿ë °¡´É ÇÕ´Ï´Ù.";
+//			2) ë¡œê·¸ì¸ í•˜ì§€ ì•Šì€ ê²½ìš° ë¡œê·¸ì¸ í˜ì´ì§€ë¡œ ì´ë™
+				msg="ë¡œê·¸ì¸ í›„ ì´ìš© ê°€ëŠ¥ í•©ë‹ˆë‹¤.";
 				loc=req.getContextPath()+"/login.action";
 				
 				req.setAttribute("msg", msg);
 				req.setAttribute("loc", loc);
-//			3) ·Î±×ÀÎ ¼º°ø ÈÄ ·Î±×ÀÎ Àü ÆäÀÌÁö·Î µ¹¾Æ°¡´Â ÀÛ¾÷; req¿¡ ´ã°ÜÀÖ´Â add.action URL °¡Á®¿Í¼­ ¼¼¼Ç¿¡ ÀúÀå
+//			3) ë¡œê·¸ì¸ ì„±ê³µ í›„ ë¡œê·¸ì¸ ì „ í˜ì´ì§€ë¡œ ëŒì•„ê°€ëŠ” ì‘ì—…; reqì— ë‹´ê²¨ìˆëŠ” add.action URL ê°€ì ¸ì™€ì„œ ì„¸ì…˜ì— ì €ì¥
 			//	String url = MyUtil.getCurrentURL(req);
 			//	session.setAttribute("goBackURL", url);
 				
-//			4) ¸Ş½ÃÁö¿Í ÇÔ²² µğ½ºÆĞÃÄ·Î ºä ÆäÀÌÁö·Î º¸³»±â
+//			4) ë©”ì‹œì§€ì™€ í•¨ê»˜ ë””ìŠ¤íŒ¨ì³ë¡œ ë·° í˜ì´ì§€ë¡œ ë³´ë‚´ê¸°
 				RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/views/msg.jsp");
 				dispatcher.forward(req, res);
 				
