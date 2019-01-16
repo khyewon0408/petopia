@@ -27,18 +27,17 @@
    <div class="span col-md-8 "><span>3.진료 회원 아이디: mint</span></div>
    <div class="span col-md-8 "><span>4.진료 동물 종류: 고양이</span></div>
    <div class="span col-md-8 "><span>5.진료 동물 이름: 냥냥이1</span></div>
-   <div class="span col-md-8 "><span>6.질병 코드: A102</span></div>
-   <div class="span col-md-8 "><span>7.병명 : 슬개골 탈구</div>
-   <div class="span col-md-8 "><span>8.수술 여부: </span><input type="checkbox"/></div>
-   <div class="span col-md-8 "><span>9.투약 명 : 백신</span></div>
-	<div class="span col-md-8 "><span>10.주의 사항:</span><textarea rows="5" cols="40"></textarea></div>
-	<div class="span col-md-8 "><span>11.노트 : </span><textarea rows="5" cols="40"></textarea></div>
+   <div class="span col-md-8 "><span>6.병명 : </span><input type="text" name="name1"/></div>
+   <div class="span col-md-8 "><span>7.수술 여부: </span><input type="checkbox"/></div>
+   <div class="span col-md-8 "><span>8.투약 명 : 백신</span></div>
+	<div class="span col-md-8 "><span>9.주의 사항:</span><textarea rows="5" cols="40" name="caution"></textarea></div>
+	<div class="span col-md-8 "><span>10.노트 : </span><textarea rows="5" cols="40" name="note"></textarea></div>
    
 	<hr style="width:100%; height:3%; color:white;"></hr>
-	<div class="span col-md-8 "><span>12.사용한 예치금 : 50000원 </span></div>
-	<div class="span col-md-8 "><span>13.사용한 포인트 : 0 POINT</span></div>
-	<div class="span col-md-8 "><span>14.본인 부담금 : 70000원</span></div>
-	<div class="span col-md-8 "><span>15.총     합 : 120000원 </span></div>
+	<div class="span col-md-8 "><span>11.사용한 예치금 : 50000원 </span></div>
+	<div class="span col-md-8 "><span>12.사용한 포인트 : 0 POINT</span></div>
+	<div class="span col-md-8 "><span>13.본인 부담금 : 70000원</span></div>
+	<div class="span col-md-8 "><span>14.총     합 : 120000원 </span></div>
    
    </div>
     <button type="button" id="register" style="margin-left: 42%; margin-top: 4%;

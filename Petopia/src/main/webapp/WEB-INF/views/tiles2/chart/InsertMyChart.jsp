@@ -3,6 +3,19 @@
 
 <%String ctxPath = request.getContextPath();%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+<style>
+.calendar{
+margin-top:3%; 
+margin-bottom:2%; 
+border: 1px solid gray; 
+witdh:500%; 
+height:120%; 
+margin-top:3%;
+padding: 4% 4% 4% 4%;
+border-radius:10px;
+
+}
+</style>
 <script type="text/javascript">
     
 	$(document).ready(function(){
@@ -24,9 +37,9 @@
 <div class="container" style="margin-top: 3%;">
   
    <div style="margin-top:3%;">
-    <a heref=""><img src="<%=ctxPath%>/resources/img/chart/cat1.jpg"  width="100" height="100" style="border-radius: 50%;"> </a>
-     <a heref=""><img src="<%=ctxPath%>/resources/img/chart/cat1.jpg"  width="100" height="100" style="border-radius: 50%;"> </a>
-     <a heref=""><img src="<%=ctxPath%>/resources/img/chart/cat1.jpg"  width="100" height="100" style="border-radius: 50%;"> </a>
+    <a heref=""><img src="<%=ctxPath%>/resources/img/chart/cat1.jpg"  width="15%" height="20%" style="border-radius: 50%;"> </a>
+     <a heref=""><img src="<%=ctxPath%>/resources/img/chart/cat1.jpg"  width="15%" height="20%" style="border-radius: 50%;"> </a>
+     <a heref=""><img src="<%=ctxPath%>/resources/img/chart/cat1.jpg"  width="15%" height="20%" style="border-radius: 50%;"> </a>
    </div>
   
   <div style="border: 1px solid gray; witdh:500%; height:20%; margin-top:3%;padding-left:1%;padding-top:3%;padding-bottom:3%;border-radius:10px;">
@@ -35,15 +48,8 @@
 	  <p>몸무게: 소형 </p>
   </div>
   
-  <div id="calendar"  class="calendar" style="margin-top:3%; margin-bottom:2%; border: 1px solid gray; witdh:500%; height:120%; margin-top:3%;padding-left:2%;padding-top:1%;border-radius:10px;">
-	   <td class="fc-event-container">
-	     <a class="fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable">
-	       <div class="fc-content">
-	         <span class="fc-time">4p</span> 
-	         <span class="fc-title">Repeating Event</span>
-	       </div>
-	     </a>
-	   </td>
+  <div id="calendar"  class="calendar" style="">
+	 
   </div>
   
  

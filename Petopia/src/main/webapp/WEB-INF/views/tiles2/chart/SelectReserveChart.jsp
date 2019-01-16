@@ -26,10 +26,11 @@ h4{
  color:rgb(252, 118, 106);
 }
 table{
-border-top: 1px solid black;
+border: 1px solid grey;
 }
 td, th{
-border: 1px solid black;
+border: 1px solid grey;
+
 }
 th{
 color:rgb(252, 118, 106);
@@ -59,7 +60,7 @@ color:rgb(252, 118, 106);
 
 <div style="margin: 0 auto;">    
 <h4>진료기록</h4>         
-  <table class="table table-bordered" style="text-align: center;width:80%;margin: 0 auto;" >
+  <table class="table" style="text-align: center;width:80%;margin: 0 auto;" >
     <thead>
       <tr>
         <th style="text-align: center;">코드</th>
@@ -82,7 +83,7 @@ color:rgb(252, 118, 106);
 <div style="margin: 0 auto;"> 
 <h4>처방내역</h4>
          
-  <table class="table table-bordered" style="text-align:center;margin: 0 auto;width:80%;" >
+  <table class="table" style="text-align:center;margin: 0 auto;width:80%;" >
     <thead>
       <tr>
         <th style="text-align: center;">처방코드</th>
@@ -106,7 +107,7 @@ color:rgb(252, 118, 106);
 <div style="margin: 0 auto; margin-bottom: 1%;"> 
 <h4>메모 히스토리</h4> 
         
-  <table class="table table-bordered" style="text-align:center;margin: 0 auto; width:80%;" >
+  <table class="table" style="text-align:center;margin: 0 auto; width:80%;" >
     <thead>
       <tr>
         <th style="text-align: center; width:80%;">메모 내용</th>
